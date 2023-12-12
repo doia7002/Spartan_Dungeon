@@ -5,33 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    private bool state;
+    
     public GameObject OptionPage;
 
     
-    public void NewStart()
+    public void OnClickNewStart()
     {
         SceneManager.LoadScene("StartScene");
     }
-    public void LoadStart() 
+    public void OnClickLoadStart() 
     {
         SceneManager.LoadScene("MainScene");
     }
-    public void Option()
+    public void OnClickOption()
     {
         OptionPage.SetActive(true);
     }
-    public void Exit()
+    public void OnClickOptionExit()
+    {
+        OptionPage.SetActive(false);
+    }
+    public void OnClickExit()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
-    }
-    private void Awake()
-    {
-        state = false;
     }
 
 }
