@@ -27,6 +27,8 @@ public class CancelButton : MonoBehaviour
         if (InventoryPopUp == true)
         {
             InventoryPopUp.SetActive(false);
+            ShopPopUp.SetActive(false);
+            StatusPopUp.SetActive(false);
             Inventory.SetActive(true);
             Shop.SetActive(true);
             Status.SetActive(true);
@@ -34,6 +36,8 @@ public class CancelButton : MonoBehaviour
         else if (ShopPopUp == true)
         {
             ShopPopUp.SetActive(false);
+            InventoryPopUp.SetActive(false);
+            StatusPopUp.SetActive(false);
             Inventory.SetActive(true);
             Shop.SetActive(true);
             Status.SetActive(true);
@@ -41,6 +45,8 @@ public class CancelButton : MonoBehaviour
         else if (StatusPopUp == true)
         { 
             StatusPopUp.SetActive(false);
+            InventoryPopUp.SetActive(false);
+            ShopPopUp.SetActive(false);
             Inventory.SetActive(true);
             Shop.SetActive(true);
             Status.SetActive(true);
