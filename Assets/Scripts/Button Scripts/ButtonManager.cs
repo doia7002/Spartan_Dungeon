@@ -2,36 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
-    
-    public GameObject OptionPage;
+
+    public GameObject InventoryPopUp;
+    public GameObject ShopPopUp;
+    public GameObject StatusPopUp;
+    public bool Status;
+    public bool Shop;
+    public bool Inventory;
 
     
-    public void OnClickNewStart()
+    public void VeiwStatus()
     {
-        SceneManager.LoadScene("StartScene");
+        StatusPopUp.SetActive(true);
+        Status = false;
+        Shop = false;
+        Inventory = false;
+        
     }
-    public void OnClickLoadStart() 
+    public void VeiwShop() 
     {
-        SceneManager.LoadScene("MainScene");
+        ShopPopUp.SetActive(true);
+        Shop = false;
+        Inventory = false;
+        Status = false;
     }
-    public void OnClickOption()
+    public void VeiwInventory()
     {
-        OptionPage.SetActive(true);
+        InventoryPopUp.SetActive(true);
+        Inventory = false;
+        Status = false;
+        Shop = false;
     }
-    public void OnClickOptionExit()
+    public void ExitPopUp()
     {
-        OptionPage.SetActive(false);
-    }
-    public void OnClickExit()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        if (StatusPopUp == true)
+        {
+            StatusPopUp.SetActive(false);
+        }
+        else if (ShopPopUp == true)
+        {
+            ShopPopUp.SetActive(false);
+        }
+        else if (InventoryPopUp == true)
+        { 
+            InventoryPopUp.SetActive(false);
+        }
+    
     }
 
 }
